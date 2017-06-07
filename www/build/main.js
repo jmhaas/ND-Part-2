@@ -112032,6 +112032,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dyna
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__campaign_campaign__ = __webpack_require__(262);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CampaignsPage; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -112044,6 +112045,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var CampaignsPage = CampaignsPage_1 = (function () {
     function CampaignsPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
@@ -112051,16 +112053,24 @@ var CampaignsPage = CampaignsPage_1 = (function () {
         // If we navigated to this page, we will have an item available as a nav param
         this.selectedItem = navParams.get('item');
         // Let's populate this page with some filler content for funzies
-        this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
-            'american-football', 'boat', 'bluetooth', 'build'];
+        this.campaigns = [];
+        this.campaigns[0] = ({ campaign: new __WEBPACK_IMPORTED_MODULE_2__campaign_campaign__["a" /* Campaign */]("Clean Up The Park", "7/10/2016", "Brandywine Park", "Lets clean up") });
         this.items = [];
-        for (var i = 1; i < 11; i++) {
-            this.items.push({
-                title: 'Item ' + i,
-                note: 'This is item #' + i,
-                icon: this.icons[0]
-            });
-        }
+        // for (let i = 1; i < 11; i++) {
+        //   this.items.push({
+        //     title: 'Item ' + i,
+        //     note: 'This is item #' + i,
+        //     icon: 'bluetooth'
+        //   });
+        // }
+        this.items.push({
+            title: this.campaigns[0].campaign.getTitle(),
+            note: this.campaigns[0].campaign.getDate(),
+            icon: 'megaphone'
+        });
+        // this.items[0] = {
+        //   
+        // }
     }
     CampaignsPage.prototype.itemTapped = function (event, item) {
         // That's right, we're pushing to ourselves!
@@ -112072,13 +112082,68 @@ var CampaignsPage = CampaignsPage_1 = (function () {
 }());
 CampaignsPage = CampaignsPage_1 = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'campaigns-page',template:/*ion-inline-start:"/Users/andrewwong/dev/ND-Part-2/src/pages/campaigns/campaigns.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-right>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/andrewwong/dev/ND-Part-2/src/pages/campaigns/campaigns.html"*/
+        selector: 'campaigns-page',template:/*ion-inline-start:"/Users/andrewwong/dev/ND-Part-2/src/pages/campaigns/campaigns.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Campaigns</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-right>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/andrewwong/dev/ND-Part-2/src/pages/campaigns/campaigns.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]) === "function" && _b || Object])
 ], CampaignsPage);
 
-var CampaignsPage_1;
+var CampaignsPage_1, _a, _b;
 //# sourceMappingURL=campaigns.js.map
+
+/***/ }),
+/* 262 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
+/* unused harmony export CampaignPage */
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Campaign; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CampaignPage = (function () {
+    function CampaignPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    return CampaignPage;
+}());
+CampaignPage = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-home',template:/*ion-inline-start:"/Users/andrewwong/dev/ND-Part-2/src/pages/campaign/campaign.html"*/''/*ion-inline-end:"/Users/andrewwong/dev/ND-Part-2/src/pages/campaign/campaign.html"*/
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
+], CampaignPage);
+
+var Campaign = (function () {
+    function Campaign(_title, _date, _location, _description) {
+        this.getTitle = function () {
+            return this.title;
+        };
+        this.getDate = function () {
+            return this.date;
+        };
+        this.getDescription = function () {
+            return this.description;
+        };
+        this.title = _title;
+        this.date = _date;
+        this.location = _location;
+        this.description = _description;
+    }
+    return Campaign;
+}());
+
+var _a;
+//# sourceMappingURL=campaign.js.map
 
 /***/ })
 /******/ ]);

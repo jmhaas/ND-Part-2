@@ -29,11 +29,15 @@ export class Campaign {
         this.description = _description;
     }
 
-    addProfile = function(profile) {
-        this.profiles.push(profile);
+    getTitle = function() {
+        return this.title;
     }
 
-    removeProfile = function(profile) {
-        this.profiles = this.profiles.filter(p => p !== profile);
+    getDate = function() {
+        return this.date;
+    }
+
+    getDescription = function() {
+        return this.description;
     }
 }
