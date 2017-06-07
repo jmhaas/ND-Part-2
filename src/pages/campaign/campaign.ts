@@ -32,4 +32,8 @@ export class Campaign {
     addProfile = function(profile) {
         this.profiles.push(profile);
     }
+
+    removeProfile = function(profile) {
+        this.profiles = this.profiles.filter(p => p !== profile);
+    }
 }

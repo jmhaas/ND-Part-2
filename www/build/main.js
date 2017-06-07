@@ -74349,8 +74349,9 @@ webpackEmptyContext.id = 193;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(100);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__ = __webpack_require__(103);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_campaigns_campaigns__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(103);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -74358,6 +74359,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -74376,7 +74378,8 @@ AppModule = __decorate([
         declarations: [
             __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */]
+            __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
+            __WEBPACK_IMPORTED_MODULE_6__pages_campaigns_campaigns__["a" /* CampaignsPage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -74386,11 +74389,12 @@ AppModule = __decorate([
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */],
             __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */]
+            __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */],
+            __WEBPACK_IMPORTED_MODULE_6__pages_campaigns_campaigns__["a" /* CampaignsPage */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_6__ionic_native_status_bar__["a" /* StatusBar */],
-            __WEBPACK_IMPORTED_MODULE_7__ionic_native_splash_screen__["a" /* SplashScreen */],
+            __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__["a" /* StatusBar */],
+            __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__["a" /* SplashScreen */],
             { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
         ]
     })
@@ -74595,6 +74599,7 @@ var platformBrowserDynamic = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(100);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_campaigns_campaigns__ = __webpack_require__(261);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -74611,6 +74616,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var MyApp = (function () {
     function MyApp(platform, statusBar, splashScreen) {
         this.platform = platform;
@@ -74621,7 +74627,8 @@ var MyApp = (function () {
         // used for an example of ngFor and navigation
         this.pages = [
             { title: 'Home', component: __WEBPACK_IMPORTED_MODULE_4__pages_home_home__["a" /* HomePage */] },
-            { title: 'List', component: __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */] }
+            { title: 'List', component: __WEBPACK_IMPORTED_MODULE_5__pages_list_list__["a" /* ListPage */] },
+            { title: 'Campaigns', component: __WEBPACK_IMPORTED_MODULE_6__pages_campaigns_campaigns__["a" /* CampaignsPage */] }
         ];
     }
     MyApp.prototype.initializeApp = function () {
@@ -74645,7 +74652,7 @@ __decorate([
     __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
 ], MyApp.prototype, "nav", void 0);
 MyApp = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"/Users/andrewwong/dev/ND-Part-2/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n      <button ion-item>\n        Campaigns\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/andrewwong/dev/ND-Part-2/src/app/app.html"*/
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"/Users/andrewwong/dev/ND-Part-2/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/andrewwong/dev/ND-Part-2/src/app/app.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
@@ -112017,6 +112024,61 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
+
+/***/ }),
+/* 261 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(44);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CampaignsPage; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var CampaignsPage = CampaignsPage_1 = (function () {
+    function CampaignsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        // If we navigated to this page, we will have an item available as a nav param
+        this.selectedItem = navParams.get('item');
+        // Let's populate this page with some filler content for funzies
+        this.icons = ['flask', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
+            'american-football', 'boat', 'bluetooth', 'build'];
+        this.items = [];
+        for (var i = 1; i < 11; i++) {
+            this.items.push({
+                title: 'Item ' + i,
+                note: 'This is item #' + i,
+                icon: this.icons[0]
+            });
+        }
+    }
+    CampaignsPage.prototype.itemTapped = function (event, item) {
+        // That's right, we're pushing to ourselves!
+        this.navCtrl.push(CampaignsPage_1, {
+            item: item
+        });
+    };
+    return CampaignsPage;
+}());
+CampaignsPage = CampaignsPage_1 = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'campaigns-page',template:/*ion-inline-start:"/Users/andrewwong/dev/ND-Part-2/src/pages/campaigns/campaigns.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-left></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-right>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>'/*ion-inline-end:"/Users/andrewwong/dev/ND-Part-2/src/pages/campaigns/campaigns.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavParams */]])
+], CampaignsPage);
+
+var CampaignsPage_1;
+//# sourceMappingURL=campaigns.js.map
 
 /***/ })
 /******/ ]);
