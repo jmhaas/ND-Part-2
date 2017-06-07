@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 import { Profile } from '../profile/profile';
 
 @Component({
-  selector: 'page-home', // needs to be changed
+  selector: 'campaign-page',
   templateUrl: 'campaign.html'
 })
 export class CampaignPage {
+  selectedItem: any;
 
-  constructor(public navCtrl: NavController) {
-
+constructor(public navCtrl: NavController, public navParams: NavParams) {
+    // If we navigated to this page, we will have an item available as a nav param
+    this.selectedItem = navParams.get('item');
   }
 
 }
@@ -39,5 +41,9 @@ export class Campaign {
 
     getDescription = function() {
         return this.description;
+    }
+
+    getLocation = function() {
+        return this.location;
     }
 }

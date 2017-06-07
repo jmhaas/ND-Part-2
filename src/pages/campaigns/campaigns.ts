@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Campaign } from '../campaign/campaign';
+import { Campaign, CampaignPage } from '../campaign/campaign';
 
 @Component({
   selector: 'campaigns-page', // needs to be changed
@@ -8,13 +8,12 @@ import { Campaign } from '../campaign/campaign';
 })
 export class CampaignsPage {
   selectedItem: any;
-  items: Array<{title: string, note: string, icon: string}>;
+  items: Array<{title: string, date:string, note: string, location:string, icon: string}>;
   campaigns: Array<{campaign: Campaign}>;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
-    // Let's populate this page with some filler content for funzies
     this.campaigns = [];
     this.campaigns[0] = ({campaign:new Campaign("Clean Up The Park", "7/10/2016", "Brandywine Park", "Lets clean up")});
 
@@ -28,18 +27,17 @@ export class CampaignsPage {
     // }
     this.items.push({
       title: this.campaigns[0].campaign.getTitle(),
-      note: this.campaigns[0].campaign.getDate(),
+      date: this.campaigns[0].campaign.getDate(),
+      note: this.campaigns[0].campaign.getDescription(),
+      location: this.campaigns[0].campaign.getLocation(),
       icon: 'megaphone'
     })
-    // this.items[0] = {
-    //   
-    // }
 
   }
 
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(CampaignsPage, {
+    this.navCtrl.push(CampaignPage, {
       item: item
     });
   }

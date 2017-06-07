@@ -13,11 +13,11 @@
       <ion-icon [name]="item.icon" item-left></ion-icon>
       {{item.title}}
       <div class="item-note" item-right>
-        {{item.note}}
+        {{item.date}}
       </div>
     </button>
   </ion-list>
   <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
+    aYou navigated here from <b>{{selectedItem.title}}</b>
   </div>
 </ion-content>

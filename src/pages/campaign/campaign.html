@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Campaign</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <h3>
+      {{selectedItem.title}}
+      </h3>
+      <ion-item>{{selectedItem.date}}</ion-item>
+      <ion-item>{{selectedItem.location}}</ion-item>
+      <ion-item>{{selectedItem.note}}</ion-item>
+  </ion-list>
+  <div *ngIf="selectedItem" padding>
+    You navigated here from <b>{{selectedItem.title}}</b>
+  </div>
+</ion-content>
