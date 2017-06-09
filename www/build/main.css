@@ -27455,6 +27455,22 @@ ion-navbar.toolbar {
   }
 }
 
+page-campaigns ion-col {
+  text-align: center;
+}
+
+page-community-resources ion-col {
+  text-align: center;
+}
+
+page-donate ion-col {
+  text-align: center;
+}
+
 page-home ion-col {
+  text-align: center;
+}
+
+page-volunteer ion-col {
   text-align: center;
 }
